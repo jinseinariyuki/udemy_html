@@ -1,4 +1,3 @@
-from operator import index
 from PIL import Image
 import os,glob
 import numpy as np
@@ -14,9 +13,9 @@ X = []
 Y = []
 for index, class in enumerate(classes):
     photos_dir = "./" + class
-    files = glob.glob(phjotos_dir + "/*.jpg")
+    files = glob.glob(photos_dir + "/*.jpg")
     for i, file in enumerate(files):
-    if i > 200: break
+    if i >= 200: break
     image = Image.open(file)
     image = Image.convert("RGB")
     image = Image.resize((image_size,image_size))
@@ -26,3 +25,4 @@ for index, class in enumerate(classes):
 
 X = np.array(X)
 Y = np.array(Y)
+
