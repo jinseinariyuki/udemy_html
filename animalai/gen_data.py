@@ -11,8 +11,8 @@ image_size = 50
 
 X = []
 Y = []
-for index, class in enumerate(classes):
-    photos_dir = "./" + class
+for index, classlabel in enumerate(classes):
+    photos_dir = "./" + classlabel
     files = glob.glob(photos_dir + "/*.jpg")
     for i, file in enumerate(files):
     if i >= 200: break
@@ -25,4 +25,3 @@ for index, class in enumerate(classes):
 
 X = np.array(X)
 Y = np.array(Y)
-
